@@ -1,8 +1,14 @@
 // Begin Timer
-
+var score = 0;
 //Questions
-//Inputs for each possible answer
-// If statement - 
-    //If correct, score total increases
-    //else, no change
 
+$("#submit").on("click", function (){
+for(var i = 1; i <= 10; i++) {
+    radios = document.getElementsByName("q" + i);
+      if(radio.value == "correct") {
+        score++;
+        console.log(score);
+        $("#score").text(score);
+      }
+    }
+})
