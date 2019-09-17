@@ -47,7 +47,6 @@ var questionArray = [{
     },  
 ]
 
-    
 // Start game
 $("#start").on('click', function(){
     trivia.gameStart();
@@ -171,20 +170,15 @@ var trivia = {
                 trivia.wrong++;
             }
         });
-
         this.result()
     },
 
 // Display results after game is finished
-
     result: function(){
         clearInterval(timer);
         $("#display").html("<h2><strong>Bow down! Here's how you did:</strong></h2>");
         $("#display").append("<h3>Right Answers: " + this.right + "</h3>");
         $("#display").append("<h3>Wrong Answers: " + this.wrong + "</h3>");
-        $("#display").append("<h3>Unanswered: " + (questionArray.length-(this.wrong + this.right)) + "</h3>");
-        
+        $("#display").append("<h3>Unanswered: " + (questionArray.length-(this.wrong + this.right)) + "</h3>");   
     }
-
-
 }
