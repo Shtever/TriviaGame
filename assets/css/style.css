@@ -1,0 +1,55 @@
+html {
+    font-family: 'Anton', sans-serif;
+}
+
+body {
+    background-image: url(http://dailytrojan.com/wp-content/uploads/2015/08/straightouttacompton.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#title {
+    font-family: 'Luckiest Guy', cursive;
+    padding-top: 15px;
+    color: yellow;
+}
+
+.subtitle {
+color: yellow;
+}
+
+#timer {
+    color: green;
+}
+
+div {
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+}
+
+.quiz{
+    text-align: center;
+}
+
+#display {
+    text-align: center;
+}
+
+#start, #submit, #container{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h3 {
+    margin: 0;
+    
+}

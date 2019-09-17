@@ -1,6 +1,11 @@
+    var solutions = ["Thugz Mansion", "Gin & Juice", "Staten Island", "Mobb Deep", "Intergalactic", "East Orange, NJ", "Del tha Funkee Homosapien", "Salt-n-Pepa & Heavy D", "69 Boyz", "Method Man"];
+    console.log("ANSWERS:");
+    for(var i = 0; i < solutions.length; i++){
+    console.log((solutions[i]))
+    }
 
-    var triviaQuestions = [{
-        question:"Tupac Shakur rapped that he wanted to spend the afterlife in this locale",
+var questionArray = [{
+        question:"1. Tupac Shakur rapped that he wanted to spend the afterlife in this locale",
         answers:["Thugz Mansion", "Gangsterz Grotto", "Hustler Heaven", "Pimp's Paradise"],
         correct: "Thugz Mansion",
     },  {
@@ -41,3 +46,145 @@
         correct: "Method Man",
     },  
 ]
+
+    
+// Start game
+$("#start").on('click', function(){
+    trivia.gameStart();
+})
+
+$(document).on('click', '#submit', function(){
+    trivia.gameover();
+})
+
+var trivia = {
+    right: 0,
+    wrong: 0,
+    timer: 90,
+
+    //start game function
+    gameStart: function(){
+        $("#start").hide();
+        $("#submit").show();
+
+        // Timer
+        timer = setInterval(trivia.countdown, 1000);
+        $("#display").prepend('<h3>Time Remaining: <span id="timer">90</span> seconds </h3>');
+        for (var i = 0; i < questionArray.length; i++){
+            $("#display").append("<br><h3>" + questionArray[i].question + "</h3>")
+            for (var j = 0; j < questionArray[i].answers.length; j++){
+                $("#display").append("<input type='radio' name='question "+ i +"' value='" + questionArray[i].answers[j] + "'>" + questionArray[i].answers[j] +"<br>")
+            }
+        }
+        // Submit button
+        $("#display").append('<br><br><a class="btn" href="#" id="submit" role="button">Submit</a>')
+    },
+
+    // Timer countdown function
+    countdown: function(){
+        trivia.timer--;
+        $("#timer").html(trivia.timer);
+        if(trivia.timer == 0){
+            console.log("You're outta time!")
+            trivia.gameover();
+        }
+    },
+    // Check for right answers
+    gameover: function(){
+        $.each($("input[name = 'question 0']:checked"), function(){
+            if($(this).val() == questionArray[0].correct){
+                trivia.right++;
+            } else {
+                trivia.wrong++;
+            }
+        });
+        $.each($("input[name = 'question 1']:checked"), function(){
+            if($(this).val() == questionArray[1].correct){
+                trivia.right++;
+            } else {
+                trivia.wrong++;
+            }
+        });
+        $.each($("input[name = 'question 2']:checked"), function(){
+            if($(this).val() == questionArray[2].correct){
+                trivia.right++;
+            } else {
+                trivia.wrong++;
+            }
+        });
+        $.each($("input[name = 'question 3']:checked"), function(){
+            if($(this).val() == questionArray[3].correct){
+                trivia.right++;
+            } else {
+                trivia.wrong++;
+            }
+        });
+        $.each($("input[name = 'question 4']:checked"), function(){
+            if($(this).val() == questionArray[4].correct){
+                trivia.right++;
+            } else {
+                trivia.wrong++;
+            }
+        });
+        $.each($("input[name = 'question 5']:checked"), function(){
+            if($(this).val() == questionArray[5].correct){
+                trivia.right++;
+            } else {
+                trivia.wrong++;
+            }
+        });
+        $.each($("input[name = 'question 6']:checked"), function(){
+            if($(this).val() == questionArray[6].correct){
+                trivia.right++;
+            } else {
+                trivia.wrong++;
+            }
+        });
+        $.each($("input[name = 'question 7']:checked"), function(){
+            if($(this).val() == questionArray[7].correct){
+                trivia.right++;
+            } else {
+                trivia.wrong++;
+            }
+        });
+
+        $.each($("input[name = 'question 8']:checked"), function(){
+            if($(this).val() == questionArray[8].correct){
+                trivia.right++;
+            } else {
+                trivia.wrong++;
+            }
+        });
+
+        $.each($("input[name = 'question 9']:checked"), function(){
+            if($(this).val() == questionArray[9].correct){
+                trivia.right++;
+            } else {
+                trivia.wrong++;
+            }
+        });
+
+        $.each($("input[name = 'question 10']:checked"), function(){
+            if($(this).val() == questionArray[10].correct){
+                trivia.right++;
+            } else {
+                trivia.wrong++;
+            }
+        });
+
+        this.result()
+    },
+
+// Display results after game is finished
+
+    result: function(){
+        clearInterval(timer);
+        $("#display").html("<h2><strong>Bow down! Here's how you did:</strong></h2>");
+        $("#display").append("<h3>Right Answers: " + this.right + "</h3>");
+        $("#display").append("<h3>Wrong Answers: " + this.wrong + "</h3>");
+        $("#display").append("<h3>Unanswered: " + (questionArray.length-(this.wrong + this.right)) + "</h3>");
+        
+    }
+
+
+}
