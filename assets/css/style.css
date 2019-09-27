@@ -6,7 +6,7 @@ body {
     background-image: url(http://dailytrojan.com/wp-content/uploads/2015/08/straightouttacompton.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed; 
 }
 
 #title {

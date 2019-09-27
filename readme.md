@@ -6,3 +6,4 @@ This assignment tested our knowledge of:
     -DOM manipulation
     -Use of radio buttons
     -HTML & styling# TriviaGame
+ 

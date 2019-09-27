@@ -45,7 +45,7 @@ var questionArray = [{
         answers:["Method Man", "Eazy-E", "DJ Yella", "Ice Cube"],
         correct: "Method Man",
     },  
-]
+] 
 
 // Start game
 $("#start").on('click', function(){
