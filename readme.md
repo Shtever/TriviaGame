@@ -5,4 +5,4 @@ This assignment tested our knowledge of:
     -Timers & countdown intervals
     -DOM manipulation
     -Use of radio buttons
-    -HTML & styling
+    -HTML & styling# TriviaGame
